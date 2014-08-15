@@ -1,6 +1,9 @@
 import requests
 from requests.auth import HTTPBasicAuth
 import random
+'''
+快速修改路由器wan口ip
+'''
 
 head={
 	'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; WOW64; Trident/7.0; rv:11.0) like Gecko',
@@ -8,6 +11,7 @@ head={
 	'Referer':'http://192.168.0.1/userRpm/WanStaticIpCfgRpm.htm'
 }
 
+#生成随机ip
 rIP = '192.168.1.'+str(random.randint(20,70))
 
 data = {

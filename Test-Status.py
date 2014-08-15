@@ -1,17 +1,48 @@
 import requests
-from tkinter import *
+'''
+读取列表域名
+看网站是否能打开
+'''
+def readDomains(filename):
+	try:
+		infile = open(filename)
+	except IOError:
+		print("Error")
+		exit()
+	file_content = infile.read()
+	infile.close()
+	domains = file_content.split("\n")
+	return domains
 
-print('Scanning')
-while(True):
-	smzdm = requests.get("http://quan.smzdm.com/content/3891",timeout=2)
-	code = smzdm.status_code
-	# print('.')
-	if(code == 403):
-		print('-',end='')
-	else:
-		print('\nOK!')
-		root = Tk()
-		Message(root,text = 'hello Message').pack()
-		root.mainloop()
-		# exit()
+def getStatus(domain):
+	print(domain,end='\t')
+	try:
+		web = requests.get(domain,timeout=1)
+		code = web.status_code
+		print(code)
+		if(200 == code):
+			return True
+		else:
+			return False
+	except Exception:
+		pass
 
+def writeTofile(domainList):
+	outfile = open( '3366host.txt','w')
+	for i in domainList:
+		outfile.write("0.0.0.0       ")
+		outfile.write(i)
+		outfile.write('\n')
+	outfile.close()
+
+def main():
+	filename = "3366.txt"
+	list=[]
+	domains = readDomains(filename)
+	for u in domains:
+		if(getStatus(u)):
+			list.append(u)
+	# print(list)
+	writeTofile(list)
+
+main()

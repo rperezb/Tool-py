@@ -8,6 +8,12 @@ UserID='13020602'#大使ID
 UniversityID='163'#大学ID
 CityID='2'#城市ID
 
+
+'''
+各选项之间用/分开，多选用*分开
+每一行为一个问卷
+'''
+
 def sendSurvey(xmlinfo):
     """
     传入xml正文，发送出去，如果提交成功则返回1，其他返回0

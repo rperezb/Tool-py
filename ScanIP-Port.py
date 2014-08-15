@@ -30,12 +30,11 @@ import socket
 #     # sk.close()
 # input()
 
-
-import socket 
 def Scan(IpAddr,port): 
     # if len(port)<1: 
     #     port=3389#默认端口 
-    s=socket.socket() 
+    s=socket.socket()
+    #超时时间为0.3秒
     s.settimeout(0.3)
     print(IpAddr,end='\t') 
     # for p in range(253,2,-1): 
@@ -43,11 +42,13 @@ def Scan(IpAddr,port):
     try:
         s.connect((IpAddr,port)) 
         print("ok!") 
+        #连接上为ok
     except socket.error: 
-        print("fail!") 
+        print("fail!")
+        #否则为fail
         pass 
 
-if __name__=='__main__': 
-    for x in range(1,255):
-        ip = '192.168.1.' +str(x)
-        Scan(ip,80) 
+
+for x in range(1,255):
+    ip = '192.168.1.' +str(x)
+    Scan(ip,80) 

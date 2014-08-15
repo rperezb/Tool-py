@@ -11,6 +11,7 @@ def getUrl():
 	}
 	lucky = requests.post(posturl,data=data,timeout=1)
 	return lucky.text
+	#实际上返回的为key-value形式
 
 def getJson(text):
 	detail = json.loads(text)
