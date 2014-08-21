@@ -34,17 +34,18 @@ def Scan(IpAddr,port):
     # if len(port)<1: 
     #     port=3389#默认端口 
     s=socket.socket()
-    #超时时间为0.3秒
-    s.settimeout(0.3)
-    print(IpAddr,end='\t') 
+    #超时时间为0.5秒
+    s.settimeout(0.5)
+    # print(IpAddr,end='\t') 
     # for p in range(253,2,-1): 
     #     addr=IpAddr+"."+str(p) 
     try:
         s.connect((IpAddr,port)) 
+        print(IpAddr,end='\t')
         print("ok!") 
         #连接上为ok
     except socket.error: 
-        print("fail!")
+        # print("fail!")
         #否则为fail
         pass 
 
