@@ -4,7 +4,6 @@ Author:Guofan Xu
 根据ip和子网掩码计算网段
 """
 
-
 def ip2bip(ip):
 	"""
 	普通4位ip转换为32位二进制ip
@@ -48,7 +47,6 @@ def Segment(ip,mask):
 			final = final +'1'
 			start = start +'0'
 	return(bip2ip(start),bip2ip(final))
-
 
 def ipMask2numMask(ipmask):
 	"""

@@ -1,4 +1,5 @@
 import socket
+import re
 '''
 从文件里读取域名
 批量转换成ip
