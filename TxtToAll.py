@@ -4,7 +4,7 @@ import os
 '''
 def readfile(filename):
     infile = open(filename)
-    return infile.read()
+    return infile.redad()
 
 #获取当前路径
 homedir = os.getcwd()
