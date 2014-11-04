@@ -26,6 +26,9 @@
 *PhoneSMS*  
 >飞Q的客户端  
 
+*ProxySwitch*  
+>一键切换IE代理  
+
 *Random-Survey*  
 >根据以往数据随机生成调查问卷  
 
