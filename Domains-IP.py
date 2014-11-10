@@ -32,7 +32,8 @@ def main():
 	filename = "domain-ip.txt"
 	domains = readDomain(filename)
 	for u in domains:
-		if(getIp(u)):
-			print(u)
+		i = getIp(u)
+		if(i):
+			print(i)
 
 main()
