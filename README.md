@@ -5,6 +5,9 @@
 *CWCAClient2014*   
 >微软校园品牌大使调查问卷客户端  
 
+*Calc24*  
+>计算24点  
+
 *DesktopClean*
 >清理桌面文件  
 
